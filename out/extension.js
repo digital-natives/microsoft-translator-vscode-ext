@@ -52,7 +52,6 @@ function translateSelection(selection, lang) {
         }
         //res[0].translations[0].to
         if (res != null) {
-<<<<<<< HEAD
             //console.log(JSON.stringify(res, null, 4));
             let text = res[0].translations[0].text;
             let lang = res[0].translations[0].to;
@@ -65,20 +64,6 @@ function translateSelection(selection, lang) {
                 }
                 else {
                     //console.log('replaced');
-=======
-            console.log(JSON.stringify(res, null, 4));
-            let text = res[0].translations[0].text;
-            let lang = res[0].translations[0].to;
-            let editor = vscode.window.activeTextEditor;
-            vscode.window.showInformationMessage(text);
-            editor.edit((editBuilder) => {
-                if (appendText) {
-                    console.log('appended');
-                    editBuilder.insert(selection.active, ' [' + lang + ']: ' + text);
-                }
-                else {
-                    console.log('replaced');
->>>>>>> 9feb215... no message
                     editBuilder.replace(selection, text);
                 }
             });
@@ -87,11 +72,7 @@ function translateSelection(selection, lang) {
 }
 function requestAPI(query, lang, cb) {
     // Replace the subscriptionKey string value with your valid subscription key.
-<<<<<<< HEAD
     const url = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=' + lang + '&textType=plain';
-=======
-    const url = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&' + lang + '&textType=plain';
->>>>>>> 9feb215... no message
     let getGuid = () => {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);

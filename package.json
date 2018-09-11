@@ -2,7 +2,7 @@
 	"name": "microsoft-translate-ext",
 	"displayName": "Microsoft Translator",
 	"description": "Translate your code using Microsoft Translate API.",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"publisher": "digitalnatives",
 	"repository": {
 		"type": "git",
@@ -52,28 +52,36 @@
 				}
 			}
 		],
-		"commands": [{
-			"command": "extension.translate1",
-			"title": "Translate to 1st Language"
-			},{
-			"command": "extension.translate2",
-			"title": "Translate to 2nd Language"
-		}],
+		"commands": [
+			{
+				"command": "extension.translate1",
+				"title": "Translate to 1st Language"
+			},
+			{
+				"command": "extension.translate2",
+				"title": "Translate to 2nd Language"
+			}
+		],
 		"menus": {
-			"editor/context":[{
-				"command":"extension.translate1",
-				"when":"editorHasSelection",
-				"group": "digitalnatives@1"
-			},{
-				"command":"extension.translate2",
-				"when":"editorHasSelection",
-				"group": "digitalnatives@2"
-			}]
+			"editor/context": [
+				{
+					"command": "extension.translate1",
+					"when": "editorHasSelection",
+					"group": "digitalnatives@1"
+				},
+				{
+					"command": "extension.translate2",
+					"when": "editorHasSelection",
+					"group": "digitalnatives@2"
+				}
+			]
 		},
-		"keybindings": [{
-			"command": "extension.translate1",
-			"key": "shift+ctrl+t"
-		}]
+		"keybindings": [
+			{
+				"command": "extension.translate1",
+				"key": "shift+ctrl+t"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -83,12 +91,12 @@
 		"test": "npm run compile && node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"request": "^2.88.0",
 		"ts-node": "^7.0.1",
 		"typescript": "^3.0.3",
 		"vscode": "^1.1.21"
 	},
 	"dependencies": {
-		"@types/request": "^2.47.1"
+		"@types/request": "^2.47.1",
+		"request": "^2.88.0"
 	}
 }
