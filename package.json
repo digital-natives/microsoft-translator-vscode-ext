@@ -2,7 +2,7 @@
 	"name": "microsoft-translate-ext",
 	"displayName": "Microsoft Translator",
 	"description": "Translate your code using Microsoft Translate API.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "digitalnatives",
 	"repository": {
 		"type": "git",
@@ -37,17 +37,17 @@
 					"microsoftTranslatorExt.appendText": {
 						"type": "boolean",
 						"default": false,
-						"description": "Set to true in order to append the selected text to the translated text."
+						"description": "Set to true in order to append the selected text to the translated text. By default, the text is replaced."
 					},
 					"microsoftTranslatorExt.firstLanguage": {
 						"type": "string",
 						"default": "en",
-						"description": "Type your Microsoft API key in order to make Microsoft Translator extension to work."
+						"description": "The first target language."
 					},
 					"microsoftTranslatorExt.secondLanguage": {
 						"type": "string",
 						"default": "de",
-						"description": "Type your Microsoft API key in order to make Microsoft Translator extension to work."
+						"description": "The second target language."
 					}
 				}
 			}
