@@ -37,29 +37,17 @@
 					"microsoftTranslatorExt.appendText": {
 						"type": "boolean",
 						"default": false,
-<<<<<<< HEAD
-						"description": "Set to true in order to append the selected text to the translated text. By default, the text is replaced."
-=======
-						"description": "Set to true in order to append the selected text to the translated text."
->>>>>>> 9feb215... no message
+						"description": "Set to true in order to append the selected text to the translated text. By default, the text would be replaced."
 					},
 					"microsoftTranslatorExt.firstLanguage": {
 						"type": "string",
 						"default": "en",
-<<<<<<< HEAD
 						"description": "The first target language."
-=======
-						"description": "Type your Microsoft API key in order to make Microsoft Translator extension to work."
->>>>>>> 9feb215... no message
 					},
 					"microsoftTranslatorExt.secondLanguage": {
 						"type": "string",
 						"default": "de",
-<<<<<<< HEAD
 						"description": "The second target language."
-=======
-						"description": "Type your Microsoft API key in order to make Microsoft Translator extension to work."
->>>>>>> 9feb215... no message
 					}
 				}
 			}

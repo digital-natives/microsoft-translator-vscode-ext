@@ -6,7 +6,6 @@ var selections;
 var subscriptionKey;
 var appendText;
 function activate(context) {
-<<<<<<< HEAD
     context.subscriptions.push(vscode.commands.registerCommand('extension.translate1', () => {
         let lang = vscode.workspace.getConfiguration('microsoftTranslatorExt')['firstLanguage'];
         onActivate(lang);
@@ -14,13 +13,6 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.translate2', () => {
         let lang = vscode.workspace.getConfiguration('microsoftTranslatorExt')['secondLanguage'];
         onActivate(lang);
-=======
-    context.subscriptions.push(vscode.commands.registerCommand('extension.translateToEn', () => {
-        onActivate('from=de&to=en');
-    }));
-    context.subscriptions.push(vscode.commands.registerCommand('extension.translateToDe', () => {
-        onActivate('from=en&to=de');
->>>>>>> 9feb215... no message
     }));
 }
 exports.activate = activate;
