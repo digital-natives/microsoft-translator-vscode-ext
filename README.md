@@ -1,10 +1,6 @@
 <h1 align="center">
   <br>
-<<<<<<< HEAD
   <img src="https://raw.githubusercontent.com/digital-natives/microsoft-translator-vscode-ext/master/assets/icons/icon.ico">
-=======
-  <img src="https://github.com/digital-natives/microsoft-translator-vscode-ext/master/assets/icons/icon.ico">
->>>>>>> 9feb215... no message
   <br>
   Microsoft Translator
 </h1>
@@ -19,7 +15,6 @@ extension you'll need to provide a <em>Microsoft Translator API Key</em> of your
 1. Install the extension.
 2. Create *Microsoft Translator API Key*. You can use [Step by step Guide](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup)
 3. Add your API key in user settings configuration - `microsoftTranslatorExt.apiKey`
-<<<<<<< HEAD
 4. Configure the first and second target language `"microsoftTranslatorExt.firstLanguage":"en"`, `"microsoftTranslatorExt.secondLanguage":"de"`
 
 ## Optional settings
@@ -27,12 +22,6 @@ Set `microsoftTranslatorExt.appendText` to true in order to append the selected 
 
 ## How to use
 Select the text that you want to translate. Click right and execute `Translate to 2nd language` command.
-=======
-4. Configure the first and second target language `microsoftTranslatorExt.firstLanguage`, `microsoftTranslatorExt.secondLanguage`
-
-## How to use
-Select the text that your want to translate. Click right and execute `Translate to 2nd language` command.
->>>>>>> 9feb215... no message
 > Tip: Use the shortcut `Ctrl+Shift+t` to translate the selected text.
 
 ## Language code table
