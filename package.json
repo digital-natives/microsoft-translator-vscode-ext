@@ -2,7 +2,7 @@
 	"name": "microsoft-translate-ext",
 	"displayName": "Microsoft Translator",
 	"description": "Translate your code using Microsoft Translate API.",
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"publisher": "digitalnatives",
 	"repository": {
 		"type": "git",

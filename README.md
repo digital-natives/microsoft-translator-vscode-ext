@@ -17,6 +17,9 @@ extension you'll need to provide a <em>Microsoft Translator API Key</em> of your
 3. Add your API key in user settings configuration - `microsoftTranslatorExt.apiKey`
 4. Configure the first and second target language `"microsoftTranslatorExt.firstLanguage":"en"`, `"microsoftTranslatorExt.secondLanguage":"de"`
 
+## Optional settings
+Set `microsoftTranslatorExt.appendText` to true in order to append the selected text to the translated text. By default, the text is replaced.
+
 ## How to use
 Select the text that you want to translate. Click right and execute `Translate to 2nd language` command.
 > Tip: Use the shortcut `Ctrl+Shift+t` to translate the selected text.
