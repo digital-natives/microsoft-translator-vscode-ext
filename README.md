@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/digital-natives/microsoft-translator-vscode-ext/master/assets/icons/icon.ico">
+  <img src="https://raw.githubusercontent.com/digital-natives/microsoft-translator-vscode-ext/master/assets/icons/icon.ico">
   <br>
   Microsoft Translator
 </h1>

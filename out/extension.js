@@ -6,11 +6,13 @@ var selections;
 var subscriptionKey;
 var appendText;
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand('extension.translateToEn', () => {
-        onActivate('from=de&to=en');
+    context.subscriptions.push(vscode.commands.registerCommand('extension.translate1', () => {
+        let lang = vscode.workspace.getConfiguration('microsoftTranslatorExt')['firstLanguage'];
+        onActivate(lang);
     }));
-    context.subscriptions.push(vscode.commands.registerCommand('extension.translateToDe', () => {
-        onActivate('from=en&to=de');
+    context.subscriptions.push(vscode.commands.registerCommand('extension.translate2', () => {
+        let lang = vscode.workspace.getConfiguration('microsoftTranslatorExt')['secondLanguage'];
+        onActivate(lang);
     }));
 }
 exports.activate = activate;
@@ -50,18 +52,18 @@ function translateSelection(selection, lang) {
         }
         //res[0].translations[0].to
         if (res != null) {
-            console.log(JSON.stringify(res, null, 4));
+            //console.log(JSON.stringify(res, null, 4));
             let text = res[0].translations[0].text;
             let lang = res[0].translations[0].to;
             let editor = vscode.window.activeTextEditor;
-            vscode.window.showInformationMessage(text);
+            //vscode.window.showInformationMessage(text);
             editor.edit((editBuilder) => {
                 if (appendText) {
-                    console.log('appended');
+                    //console.log('appended');
                     editBuilder.insert(selection.active, ' [' + lang + ']: ' + text);
                 }
                 else {
-                    console.log('replaced');
+                    //console.log('replaced');
                     editBuilder.replace(selection, text);
                 }
             });
@@ -70,7 +72,7 @@ function translateSelection(selection, lang) {
 }
 function requestAPI(query, lang, cb) {
     // Replace the subscriptionKey string value with your valid subscription key.
-    const url = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&' + lang + '&textType=plain';
+    const url = 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=' + lang + '&textType=plain';
     let getGuid = () => {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
