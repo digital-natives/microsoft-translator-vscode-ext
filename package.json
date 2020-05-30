@@ -1,102 +1,118 @@
 {
-	"name": "microsoft-translate-ext",
-	"displayName": "Microsoft Translator",
-	"description": "Translate your code using Microsoft Translate API.",
-	"version": "0.0.4",
-	"publisher": "digitalnatives",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/digital-natives/microsoft-translator-vscode-ext.git"
-	},
-	"bugs": {
-		"url": "https://github.com/digital-natives/microsoft-translator-vscode-ext/issues"
-	},
-	"icon": "assets/icons/icon.ico",
-	"engines": {
-		"vscode": "^0.10.5"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:extension.translate1",
-		"onCommand:extension.translate2"
-	],
-	"main": "./out/extension",
-	"contributes": {
-		"configuration": [
-			{
-				"type": "object",
-				"title": "Microsoft Translator configuration",
-				"properties": {
-					"microsoftTranslatorExt.apiKey": {
-						"type": "string",
-						"default": "",
-						"description": "Type your Microsoft API key in order to make Microsoft Translator extension to work."
-					},
-					"microsoftTranslatorExt.appendText": {
-						"type": "boolean",
-						"default": false,
-						"description": "Set to true in order to append the selected text to the translated text. By default, the text would be replaced."
-					},
-					"microsoftTranslatorExt.firstLanguage": {
-						"type": "string",
-						"default": "en",
-						"description": "The first target language."
-					},
-					"microsoftTranslatorExt.secondLanguage": {
-						"type": "string",
-						"default": "de",
-						"description": "The second target language."
-					}
-				}
-			}
-		],
-		"commands": [
-			{
-				"command": "extension.translate1",
-				"title": "Translate to 1st Language"
-			},
-			{
-				"command": "extension.translate2",
-				"title": "Translate to 2nd Language"
-			}
-		],
-		"menus": {
-			"editor/context": [
-				{
-					"command": "extension.translate1",
-					"when": "editorHasSelection",
-					"group": "digitalnatives@1"
-				},
-				{
-					"command": "extension.translate2",
-					"when": "editorHasSelection",
-					"group": "digitalnatives@2"
-				}
-			]
-		},
-		"keybindings": [
-			{
-				"command": "extension.translate1",
-				"key": "shift+ctrl+t"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "npm run compile && node ./node_modules/vscode/bin/test"
-	},
-	"devDependencies": {
-		"ts-node": "^7.0.1",
-		"typescript": "^3.0.3",
-		"vscode": "^1.1.21"
-	},
-	"dependencies": {
-		"@types/request": "^2.47.1",
-		"request": "^2.88.0"
-	}
+  "name": "microsoft-translate-ext",
+  "displayName": "Microsoft Translator",
+  "description": "Translate your code using Microsoft Translate API.",
+  "version": "0.0.4",
+  "publisher": "digitalnatives",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digital-natives/microsoft-translator-vscode-ext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digital-natives/microsoft-translator-vscode-ext/issues"
+  },
+  "icon": "assets/icons/icon.ico",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.translateText",
+    "onCommand:extension.translateTextPrimary",
+    "onCommand:extension.translateTextSecondary",
+    "onCommand:extension.translateLinesUnderCursor",
+    "onCommand:extension.translateLinesUnderCursorPrimary",
+    "onCommand:extension.translateLinesUnderCursorSecondary"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "configuration": [
+      {
+        "type": "object",
+        "title": "Microsoft Translator configuration",
+        "properties": {
+          "microsoftTranslatorExt.subscriptionKey": {
+            "type": "string",
+            "description": "The subscription key provided by Microsoft."
+          },
+          "microsoftTranslatorExt.subscriptionRegion": {
+            "type": "string",
+            "description": "The subscription region where the data center is located (i.e. canadacentral)."
+          },
+          "microsoftTranslatorExt.primaryLanguage": {
+            "type": "string",
+            "description": "The primary language in standard 2 character language code."
+          },
+          "microsoftTranslatorExt.secondaryLanguage": {
+            "type": "string",
+            "description": "The secondary language in standard 2 character language code."
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.translateText",
+        "title": "Translate selection(s)"
+      },
+      {
+        "command": "extension.translateTextPrimary",
+        "title": "Translate selection(s) to primary language"
+      },
+      {
+        "command": "extension.translateTextSecondary",
+        "title": "Translate selection(s) to secondary language"
+      },
+      {
+        "command": "extension.translateLinesUnderCursor",
+        "title": "Translate line(s) under the cursor"
+      },
+      {
+        "command": "extension.translateLinesUnderCursorPrimary",
+        "title": "Translate line(s) under the cursor to primary language"
+      },
+      {
+        "command": "extension.translateLinesUnderCursorSecondary",
+        "title": "Translate line(s) under the cursor to secondary language"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.translateText",
+          "when": "editorHasSelection",
+          "group": "digitalnatives@1"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "extension.translateText",
+        "key": "shift+ctrl+t"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.4.7",
+    "@types/mocha": "^7.0.2",
+    "@types/uuid": "^8.0.0",
+    "assert": "^2.0.0",
+    "mocha": "^7.2.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "uuid": "^8.1.0"
+  }
 }
