@@ -6,10 +6,6 @@
 </h1>
 <h2 align="center">Translate a selected text using <a href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft Translator API.</a>
 </h2>
-<p>
-<strong>Important:</strong> In order to use this 
-extension you'll need to provide a <em>Microsoft Translator API Key</em> of your own. <b style="color:rgb(226, 58, 58)">Without the API Key this extension is useless for you.</b>
-</p>
 
 ## Installation
 1. Install the extension.
