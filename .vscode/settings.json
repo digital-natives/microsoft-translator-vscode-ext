@@ -10,5 +10,6 @@
         "atril",
         "bjda",
         "rsdf"
-    ]
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
