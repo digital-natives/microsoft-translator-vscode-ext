@@ -21,7 +21,8 @@
 `Secondary Language` (optional) - The secondary language to set. This would be the language to convert to. However, you may use the command palette to select a language to convert to.
 
 `Subscription Key` - The API key from the resource manager.
-`Subscription Region` (optional) - The data center location
+
+`Subscription Region` - (optional) - The data center location.
 
 
 ## How to use
