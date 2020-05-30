@@ -55,27 +55,27 @@
     "commands": [
       {
         "command": "extension.translateText",
-        "title": "Translate selection(s)"
+        "title": "Microsoft Translator: Translate"
       },
       {
         "command": "extension.translateTextPrimary",
-        "title": "Translate selection(s) to primary language"
+        "title": "Microsoft Translator: Translate to primary language"
       },
       {
         "command": "extension.translateTextSecondary",
-        "title": "Translate selection(s) to secondary language"
+        "title": "Microsoft Translator: Translate to secondary language"
       },
       {
         "command": "extension.translateLinesUnderCursor",
-        "title": "Translate line(s) under the cursor"
+        "title": "Microsoft Translator: Translate line(s) under the cursor"
       },
       {
         "command": "extension.translateLinesUnderCursorPrimary",
-        "title": "Translate line(s) under the cursor to primary language"
+        "title": "Microsoft Translator: Translate line(s) under the cursor to primary language"
       },
       {
         "command": "extension.translateLinesUnderCursorSecondary",
-        "title": "Translate line(s) under the cursor to secondary language"
+        "title": "Microsoft Translator: Translate line(s) under the cursor to secondary language"
       }
     ],
     "menus": {
@@ -83,7 +83,17 @@
         {
           "command": "extension.translateText",
           "when": "editorHasSelection",
-          "group": "digitalnatives@1"
+          "group": "microsoft-translator@1"
+        },
+        {
+          "command": "extension.translateTextPrimary",
+          "when": "editorHasSelection",
+          "group": "microsoft-translator@2"
+        },
+        {
+          "command": "extension.translateTextSecondary",
+          "when": "editorHasSelection",
+          "group": "microsoft-translator@3"
         }
       ]
     },
