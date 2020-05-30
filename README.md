@@ -22,7 +22,7 @@
 
 `Subscription Key` - The API key from the resource manager.
 
-`Subscription Region` - (optional) - The data center location.
+`Subscription Region` (optional) - The data center location.
 
 
 ## How to use
