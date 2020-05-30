@@ -16,7 +16,7 @@ extension you'll need to provide a <em>Microsoft Translator API Key</em> of your
 2. Create *Microsoft Translator API Key*. You can use [Step by step Guide](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup)
 3. Add your API key in user settings configuration - `Subscription Key`
 4. Add your data center region (optional) - `Subscription Region`
-5. Configure the primary and secondary language `Primary Language`, `Secondary Language`
+5. Configure the primary and secondary language - `Primary Language`, `Secondary Language`
 
 ## Settings
 
