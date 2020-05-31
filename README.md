@@ -16,9 +16,9 @@
 
 ## Settings
 
-`Primary Language` - The primary language to set. This would be your native language and can be used convert a foreign language to your native language.
+`Primary Language` - The primary language to be set. This would be your native language and can be used convert a foreign language to your native language.
 
-`Secondary Language` (optional) - The secondary language to set. This would be the language to convert to. However, you may use the command palette to select a language to convert to.
+`Secondary Language` (optional) - The secondary language to be set. This would be the language to convert to. However, you may use the command palette to select a language to convert to.
 
 `Subscription Key` - The API key from the resource manager.
 
