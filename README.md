@@ -34,8 +34,14 @@ There is also an option to translate the text and add it the next line.
 
 ### Selection
 
-Select the text that you want to translate. Click right and execute `Translate to secondary language` command.
+Select the text that you want to translate. Click right and execute `Microsoft Translator: Translate` command.
 > Tip: Use the shortcut `Ctrl+Shift+t` to translate the selected text.
 
+Two other context options are available:
+
+* `Microsoft Translator: Translate to primary language`
+* `Microsoft Translator: Translate to secondary language`
+
 ## Language code table
+
 [Supported Languages](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/languages)
