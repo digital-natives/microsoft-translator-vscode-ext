@@ -6,23 +6,42 @@
 </h1>
 <h2 align="center">Translate a selected text using <a href="https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/">Microsoft Translator API.</a>
 </h2>
-<p>
-<strong>Important:</strong> In order to use this 
-extension you'll need to provide a <em>Microsoft Translator API Key</em> of your own. <b style="color:rgb(226, 58, 58)">Without the API Key this extension is useless for you.</b>
-</p>
 
 ## Installation
 1. Install the extension.
 2. Create *Microsoft Translator API Key*. You can use [Step by step Guide](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup)
-3. Add your API key in user settings configuration - `microsoftTranslatorExt.apiKey`
-4. Configure the first and second target language `"microsoftTranslatorExt.firstLanguage":"en"`, `"microsoftTranslatorExt.secondLanguage":"de"`
+3. Add your API key in user settings configuration - `Subscription Key`
+4. Add your data center region (optional) - `Subscription Region`
+5. Configure the primary and secondary language - `Primary Language`, `Secondary Language`
 
-## Optional settings
-Set `microsoftTranslatorExt.appendText` to true in order to append the selected text to the translated text. By default, the text would be replaced.
+## Settings
+
+`Primary Language` - The primary language to be set. This would be your native language and can be used convert a foreign language to your native language.
+
+`Secondary Language` - The secondary language to be set. This would be the language to convert to. However, you may use the command palette to select a language to convert to.
+
+`Subscription Key` - The API key from the resource manager.
+
+`Subscription Region` (optional) - The data center location.
+
 
 ## How to use
-Select the text that you want to translate. Click right and execute `Translate to 2nd language` command.
+
+### Command Palette
+
+You may use the command pallete to convert to a specific language, primary language, or secondary language.
+There is also an option to translate the text and add it the next line.
+
+### Selection
+
+Select the text that you want to translate. Click right and execute `Microsoft Translator: Translate` command.
 > Tip: Use the shortcut `Ctrl+Shift+t` to translate the selected text.
 
+Two other context options are available:
+
+* `Microsoft Translator: Translate to primary language`
+* `Microsoft Translator: Translate to secondary language`
+
 ## Language code table
-[Supported Languages](https://docs.microsoft.com/de-de/azure/cognitive-services/translator/languages)
+
+[Supported Languages](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/languages)
