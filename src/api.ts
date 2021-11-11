@@ -34,15 +34,3 @@ export function translate(text: string, options: TranslateOptions) {
     }
   )
 }
-
-// export function run() {
-//   translate('Hello', {
-//     language: { primary: 'en', secondary: 'ja' },
-//     subscriptionKey: '615a85f4ebb04b158a4b82182ad1cb38',
-//     subscriptionRegion: 'canadacentral',
-//   })
-//     .then(function (response) {
-//       console.log(response.data[0].translations)
-//     })
-//     .catch((error) => console.log(error))
-// }
