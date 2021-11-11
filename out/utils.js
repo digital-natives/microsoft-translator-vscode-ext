@@ -102,7 +102,7 @@ function getTranslationPromise(text, language, selection) {
         if (!subscriptionKey) {
             return reject(new Error('A subscription key is required to perform translations.'));
         }
-        api_1.translate(text, {
+        (0, api_1.translate)(text, {
             language,
             subscriptionKey,
             subscriptionRegion,

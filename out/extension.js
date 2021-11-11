@@ -1,12 +1,7 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
-const translate_1 = require("./commands/translate");
-const translate_primary_1 = require("./commands/translate-primary");
-const translate_secondary_1 = require("./commands/translate-secondary");
-const translate_lines_under_cursor_1 = require("./commands/translate-lines-under-cursor");
-const translate_lines_under_cursor_primary_1 = require("./commands/translate-lines-under-cursor-primary");
-const translate_lines_under_cursor_secondary_1 = require("./commands/translate-lines-under-cursor-secondary");
+const commands_1 = require("./commands");
 /**
  * Keeps a list of most recently used languages
  */
@@ -18,19 +13,19 @@ const recentlyUsed = [];
  */
 function activate(context) {
     // @ts-ignore
-    console.log(translate_1.translateText);
+    console.log(translateText);
     // Translate
-    context.subscriptions.push(translate_1.translateText(recentlyUsed));
+    context.subscriptions.push((0, commands_1.translate)(recentlyUsed));
     // Translate with primary language
-    context.subscriptions.push(translate_primary_1.translateTextPrimary());
+    context.subscriptions.push((0, commands_1.translateTextPrimary)());
     // Translate with secondary language
-    context.subscriptions.push(translate_secondary_1.translateTextSecondary());
+    context.subscriptions.push((0, commands_1.translateTextSecondary)());
     // Translate lines under cursor
-    context.subscriptions.push(translate_lines_under_cursor_1.translateLinesUnderCursor(recentlyUsed));
+    context.subscriptions.push((0, commands_1.translateLinesUnderCursor)(recentlyUsed));
     // Translate lines under cursor with primary language
-    context.subscriptions.push(translate_lines_under_cursor_primary_1.translateLinesUnderCursorPrimary());
+    context.subscriptions.push((0, commands_1.translateLinesUnderCursorPrimary)());
     // Translate lines under cursor with secondary language
-    context.subscriptions.push(translate_lines_under_cursor_secondary_1.translateLinesUnderCursorSecondary());
+    context.subscriptions.push((0, commands_1.translateLinesUnderCursorSecondary)());
 }
 exports.activate = activate;
 // This method is called when your extension is deactivated

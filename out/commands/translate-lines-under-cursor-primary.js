@@ -7,12 +7,12 @@ function translateLinesUnderCursorPrimary() {
     return vscode.commands.registerCommand('extension.translateLinesUnderCursorPrimary', function translateLinesUnderCursorPrimaryCallback() {
         const editor = vscode.window.activeTextEditor;
         const { document, selections } = editor;
-        let locale = utils_1.getPrimaryLanguage();
+        let locale = (0, utils_1.getPrimaryLanguage)();
         if (!locale) {
             vscode.window.showWarningMessage('Primary language has not been set. Please set the primary language.');
             return;
         }
-        const translationsPromiseArray = utils_1.getTranslationsPromiseArrayLine(selections, document, locale);
+        const translationsPromiseArray = (0, utils_1.getTranslationsPromiseArrayLine)(selections, document, locale);
         Promise.all(translationsPromiseArray)
             .then(function (results) {
             editor.edit((builder) => {

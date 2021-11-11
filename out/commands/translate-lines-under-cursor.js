@@ -22,8 +22,8 @@ function translateLinesUnderCursor(recentlyUsed) {
             if (!res)
                 return;
             const language = quickPickData.find((t) => t.name === res);
-            utils_1.updateLanguageList(language, recentlyUsed);
-            const translationsPromiseArray = utils_1.getTranslationsPromiseArrayLine(selections, document, language.value);
+            (0, utils_1.updateLanguageList)(language, recentlyUsed);
+            const translationsPromiseArray = (0, utils_1.getTranslationsPromiseArrayLine)(selections, document, language.value);
             Promise.all(translationsPromiseArray)
                 .then(function (results) {
                 editor.edit((builder) => {

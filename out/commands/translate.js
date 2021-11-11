@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.translateText = void 0;
+exports.translate = void 0;
 const vscode = require("vscode");
 const utils_1 = require("../utils");
 const languages_1 = require("../languages");
-function translateText(recentlyUsed) {
+function translate(recentlyUsed) {
     return vscode.commands.registerCommand('extension.translateText', function () {
         const editor = vscode.window.activeTextEditor;
         const { document, selections } = editor;
@@ -22,9 +22,11 @@ function translateText(recentlyUsed) {
             if (!res)
                 return;
             const language = quickPickData.find((t) => t.name === res);
-            // TODO: Throw an error message if a language doens't exist
-            utils_1.updateLanguageList(language, recentlyUsed);
-            const translationsPromiseArray = utils_1.getTranslationsPromiseArray(selections, document, language.value);
+            if (!language) {
+                return vscode.window.showErrorMessage(`The selected language ${res} is not available`);
+            }
+            (0, utils_1.updateLanguageList)(language, recentlyUsed);
+            const translationsPromiseArray = (0, utils_1.getTranslationsPromiseArray)(selections, document, language.value);
             Promise.all(translationsPromiseArray)
                 .then(function (results) {
                 editor.edit((builder) => {
@@ -39,5 +41,5 @@ function translateText(recentlyUsed) {
         });
     });
 }
-exports.translateText = translateText;
+exports.translate = translate;
 //# sourceMappingURL=translate.js.map

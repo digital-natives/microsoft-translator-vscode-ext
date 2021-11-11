@@ -4,24 +4,16 @@ exports.translate = void 0;
 const axios_1 = require("axios");
 const uuid_1 = require("uuid");
 function translate(text, options) {
-    const clientTraceId = uuid_1.v4();
-    const region = options.subscriptionRegion
-        ? { 'Ocp-Apim-Subscription-region': options.subscriptionRegion }
-        : {};
+    var _a, _b;
+    const clientTraceId = (0, uuid_1.v4)();
     return axios_1.default.post(`https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=${options.language}`, [{ Text: text }], {
-        headers: Object.assign({ 'Ocp-Apim-Subscription-Key': options.subscriptionKey, 'Content-type': 'application/json', 'X-ClientTraceId': clientTraceId }, region),
+        headers: {
+            'Ocp-Apim-Subscription-Key': (_a = options.subscriptionKey) !== null && _a !== void 0 ? _a : '',
+            'Content-type': 'application/json',
+            'X-ClientTraceId': clientTraceId,
+            'Ocp-Apim-Subscription-region': (_b = options.subscriptionRegion) !== null && _b !== void 0 ? _b : ''
+        },
     });
 }
 exports.translate = translate;
-// export function run() {
-//   translate('Hello', {
-//     language: { primary: 'en', secondary: 'ja' },
-//     subscriptionKey: '615a85f4ebb04b158a4b82182ad1cb38',
-//     subscriptionRegion: 'canadacentral',
-//   })
-//     .then(function (response) {
-//       console.log(response.data[0].translations)
-//     })
-//     .catch((error) => console.log(error))
-// }
 //# sourceMappingURL=api.js.map
