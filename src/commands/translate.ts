@@ -26,6 +26,10 @@ export function translate(recentlyUsed: Language[]) {
           if (!res) return
           const language = quickPickData.find((t) => t.name === res)
           // TODO: Throw an error message if a language doens't exist
+          if (!language) {
+            return vscode.window.showErrorMessage(`The selected language ${res} is not available`)
+          }
+          
           updateLanguageList(language!, recentlyUsed)
           const translationsPromiseArray = getTranslationsPromiseArray(
             selections,
