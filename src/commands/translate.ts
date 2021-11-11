@@ -35,6 +35,7 @@ export function translate(recentlyUsed: Language[]) {
             document,
             language!.value
           )
+          
           Promise.all(translationsPromiseArray)
             .then(function (results) {
               editor!.edit((builder) => {
