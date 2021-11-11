@@ -2,12 +2,14 @@
 import * as vscode from 'vscode'
 
 import { Language } from './types'
-import { translateText } from './commands/translate'
-import { translateTextPrimary } from './commands/translate-primary'
-import { translateTextSecondary } from './commands/translate-secondary'
-import { translateLinesUnderCursor } from './commands/translate-lines-under-cursor'
-import { translateLinesUnderCursorPrimary } from './commands/translate-lines-under-cursor-primary'
-import { translateLinesUnderCursorSecondary } from './commands/translate-lines-under-cursor-secondary'
+import {
+  translate,
+  translateLinesUnderCursor,
+  translateLinesUnderCursorPrimary,
+  translateLinesUnderCursorSecondary,
+  translateTextPrimary,
+  translateTextSecondary
+} from './commands'
 
 /**
  * Keeps a list of most recently used languages
