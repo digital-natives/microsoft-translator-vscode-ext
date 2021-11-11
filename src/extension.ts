@@ -23,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
   // @ts-ignore
   console.log(translateText)
   // Translate
-  context.subscriptions.push(translateText(recentlyUsed))
+  context.subscriptions.push(translate(recentlyUsed))
   // Translate with primary language
   context.subscriptions.push(translateTextPrimary())
   // Translate with secondary language

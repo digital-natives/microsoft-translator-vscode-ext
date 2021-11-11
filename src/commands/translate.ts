@@ -4,7 +4,7 @@ import { Language } from '../types'
 import { updateLanguageList, getTranslationsPromiseArray } from '../utils'
 import { languages } from '../languages'
 
-export function translateText(recentlyUsed: Language[]) {
+export function translate(recentlyUsed: Language[]) {
   return vscode.commands.registerCommand(
     'extension.translateText',
     function () {
